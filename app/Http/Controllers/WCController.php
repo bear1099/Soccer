@@ -135,7 +135,8 @@ class WCController extends Controller
                 ->get();
              }
 	return view('ui/search_result',[
-        'result' => $result
+        'result' => $result,
+        'id' => $tournament_id,
     ]);
     }
 
