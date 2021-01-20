@@ -91,7 +91,7 @@ class WCController extends Controller
                 ->where('wc_team0.id','=',$team)
                 ->orwhere('wc_team1.id','=',$team)
                 ->get();
-        }elseif($round==0&&$outcome==0){
+            }elseif($round==0&&$outcome==0){
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -104,7 +104,7 @@ class WCController extends Controller
                 ->where('wc_team0.id','=',$team)
                 ->orwhere('wc_team1.id','=',$team)
                 ->get();
-        }elseif($round==0){
+            }elseif($round==0){
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -113,6 +113,7 @@ class WCController extends Controller
                 ->join('wc_team as wc_team0','wc_result.team_id0','=','wc_team0.id')
                 ->join('wc_team as wc_team1','wc_result.team_id1','=','wc_team1.id')
                 ->select('wc_tournament.name AS tournament_name','wc_round.name AS round_name','wc_group.name AS group_name','wc_match.start_date AS date','wc_team0.name AS team0_name','wc_result.outcome AS outcome','wc_team1.name AS team1_name')
+                ->where('wc_tournament.id','=',$tournament_id)
                 ->where('wc_team0.id','=',$team)
                 ->where('wc_result.outcome','=',$outcome)
                 ->get();

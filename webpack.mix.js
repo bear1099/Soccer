@@ -13,12 +13,8 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
-mix.js('resources/js/helloworld.js','public/js')
 
 
-mix.js('resources/assets/js/hello_vuejs.js', 'public/js');
-
-mix.js('resources/assets/js/hello_ajax.js', 'public/js');
 
 mix.js('resources/assets/js/search.js','public/js');
 mix.js('resources/assets/js/search_result.js','public/js');

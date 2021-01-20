@@ -1,11 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/hello_ajax.js": "/js/hello_ajax.js",
-    "/js/hello_vuejs.js": "/js/hello_vuejs.js",
-    "/js/helloworld.js": "/js/helloworld.js",
     "/js/search.js": "/js/search.js",
-    "/js/search_result.js": "/js/search_result.js",
-    "/js/search.241b6cb40ac59738cf89.hot-update.js": "/js/search.241b6cb40ac59738cf89.hot-update.js",
-    "/js/search.b7d89ff95d2aa30d20f7.hot-update.js": "/js/search.b7d89ff95d2aa30d20f7.hot-update.js"
+    "/js/search_result.js": "/js/search_result.js"
 }
