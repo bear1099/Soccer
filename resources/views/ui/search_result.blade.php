@@ -12,8 +12,6 @@
 <div class="container">
 <div id="search_form_area">
     <div class="title">Search Matches: Results</div>
-    <?php echo $id;?>
-    <?php echo "status =", $status ;?> 
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
