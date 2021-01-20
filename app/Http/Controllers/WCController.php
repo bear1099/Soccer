@@ -39,8 +39,9 @@ class WCController extends Controller
         $group = request('group');
         $team = request('team');
         $outcome = request('outcome');
-        
+        $status;
         if($round==0&&$round==0&&$team==0){
+                $status = "トーナメントのみ入力されました";
                 $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -52,6 +53,7 @@ class WCController extends Controller
                 ->where('wc_tournament.id','=',$tournament_id)
                 ->get();
         }elseif($group==0&&$team==0){
+            $status = "トーナメントとラウンドのみ入力されました";
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -64,6 +66,7 @@ class WCController extends Controller
                 ->where('wc_round.knockout','=',$round)
                 ->get();
         }elseif($team==0){
+            $status = "チーム以外入力されています";
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -77,6 +80,7 @@ class WCController extends Controller
                 ->where('wc_group.id','=',$group)
                 ->get();
             }elseif($outcome==0){
+                $status = "結果以外入力されています";
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -92,6 +96,7 @@ class WCController extends Controller
                 ->orwhere('wc_team1.id','=',$team)
                 ->get();
             }elseif($round==0&&$outcome==0){
+                $status = "ラウンドと結果以外入力されています";
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -105,6 +110,7 @@ class WCController extends Controller
                 ->orwhere('wc_team1.id','=',$team)
                 ->get();
             }elseif($round==0){
+                $status = "ラウンド以外入力されています";
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -118,6 +124,7 @@ class WCController extends Controller
                 ->where('wc_result.outcome','=',$outcome)
                 ->get();
              }else{
+                 $status = "else";
             $result = DB::table('wc_tournament')
                 ->join('wc_round','wc_tournament.id','=','wc_round.tournament_id')
                 ->join('wc_match','wc_round.id','=','wc_match.round_id')
@@ -137,6 +144,7 @@ class WCController extends Controller
 	return view('ui/search_result',[
         'result' => $result,
         'id' => $tournament_id,
+        'status' => $status,
     ]);
     }
 
