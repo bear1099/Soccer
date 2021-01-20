@@ -7,4 +7,5 @@
 ## 機能
 トーナメント名、予選・決勝リーグ、チーム名などの選択に応じて試合結果を表示します。
 ## 注力した機能
-
+## URL
+https://soccer-wc-database.herokuapp.com/
