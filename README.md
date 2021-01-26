@@ -12,5 +12,7 @@ Googleログインを含む認証機能
 GMapAPIを使って大会開催地の位置情報表示機能
 ## 注力した機能
 選択タブに出てくる候補を非同期通信で表示するようにしました。
+## 動作例 (Youtube)
+[![](https://img.youtube.com/vi/dTCa9an1wmE&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=dTCa9an1wmE&feature=youtu.be)
 ## URL
 https://soccer-wc-database.herokuapp.com/
